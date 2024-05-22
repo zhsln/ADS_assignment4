@@ -1,3 +1,6 @@
+/**
+ * Testing class. From GitHub link in the Moodle.
+ */
 public class Main {
     public static void main(String[] args) {
         WeightedGraph<String> weightedGraph = new WeightedGraph<>(true);
