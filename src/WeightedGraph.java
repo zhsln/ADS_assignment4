@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class WeightedGraph<V> {
@@ -40,5 +42,17 @@ public class WeightedGraph<V> {
         }
 
         return vertex;
+    }
+
+    public List<Vertex<V>> adjacencyList(V v) {
+        Vertex<V> vertex = getOrCreate(v);
+
+        return new LinkedList<>(vertex.getAdjacentVertices().keySet());
+    }
+
+    public Iterable<Map.Entry<Vertex<V>, Double>> getEdges(V v) {
+        Vertex<V> vertex = getOrCreate(v);
+
+        return vertex.getAdjacentVertices().entrySet();
     }
 }
